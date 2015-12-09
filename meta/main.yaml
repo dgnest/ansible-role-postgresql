@@ -1,18 +1,18 @@
 ---
-
 galaxy_info:
   author: Luis Mayta
   description: A role for installing and configuring PostgreSQL
+  company: DgNest
   version: 0.0.1
-  license: MIT
+  license: mit
   min_ansible_version: 1.7
-
   platforms:
     - name: Debian
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
+        - precise  # 12.04
+        - saucy    # 13.10
+        - trusty   # 14.04
 
   categories:
     - database
