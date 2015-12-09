@@ -4,6 +4,11 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 
+## [v0.0.2] - 2015-12-09
+
+### Fixed:
+- Change extension file meta/main.yaml to main.yml
+
 ## [v0.0.1] - 2015-12-09
 
 ### Added:
