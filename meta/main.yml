@@ -3,7 +3,7 @@ galaxy_info:
   author: Luis Mayta
   description: A role for installing and configuring PostgreSQL
   company: DgNest
-  version: 0.0.1
+  version: 0.0.3
   license: Mit
   min_ansible_version: 1.7
   platforms:
