@@ -38,10 +38,23 @@ Supported targets:
 
 The default role variables in `defaults/main.yml` are:
 
-    ---
-    # defaults file for nodejs
-    nodejs_version: 0.12.7
+    ```yaml
+    # PostgreSQL
+    postgresql_version: 9.4
+    postgresql_listen_addresses:
+      - '*'
 
+    postgresql_databases:
+      - name: 'test_data'
+        port: 5432
+
+    postgresql_users:
+      - db: 'name_database'
+        name: 'user'
+        password: 'P@ssw0rd'
+        priv: ALL
+        role_attr_flags: SUPERUSER
+    ```
 
 ## Dependencies
 
