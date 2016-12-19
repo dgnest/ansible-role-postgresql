@@ -1,7 +1,7 @@
 ---
 
 - name: Create the necessary directories
-  sudo: yes
+  become: true
   file:
     dest: "{{item}}"
     state: directory
@@ -18,11 +18,11 @@
     - conf
 
 - name: Configure PostgreSQL
-  sudo: yes
+  become: true
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-  with_items: postgresql_conf_templates
+  with_items: "{{ postgresql_conf_templates | default({}) }}"
   notify: restart postgresql
   tags:
     - postgresql
@@ -30,7 +30,7 @@
     - conf
 
 - name: Configure PostgreSQL (authentication)
-  sudo: yes
+  become: true
   template:
     src: pg_hba.conf.j2
     dest: "{{postgresql_hba_file}}"
@@ -41,7 +41,7 @@
     - conf
 
 - name: Configure PostgreSQL (ident)
-  sudo: yes
+  become: true
   template:
     src: pg_ident.conf.j2
     dest: "{{postgresql_ident_file}}"
