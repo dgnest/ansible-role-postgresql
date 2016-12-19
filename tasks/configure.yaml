@@ -22,7 +22,7 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-  with_items: postgresql_conf_templates
+  with_items: "{{ postgresql_conf_templates | default({}) }}"
   notify: restart postgresql
   tags:
     - postgresql

@@ -9,6 +9,6 @@
     password: "{{ item.password }}"
     priv: '{{ item.priv }}'
     role_attr_flags: '{{ item.role_attr_flags }}'
-  with_items: postgresql_users
+  with_items: "{{ postgresql_users | default({}) }}"
   notify:
     - reload postgresql
