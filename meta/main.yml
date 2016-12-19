@@ -5,7 +5,7 @@ galaxy_info:
   company: DgNest
   version: 0.0.3
   license: Mit
-  min_ansible_version: 1.7
+  min_ansible_version: 2.0
   platforms:
     - name: Debian
     - name: Ubuntu
