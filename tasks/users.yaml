@@ -1,8 +1,8 @@
 ---
 
 - name: Ensure user has access to database
-  sudo: yes
-  sudo_user: postgres
+  become: true
+  become_user: postgres
   postgresql_user:
     db: "{{ item.db }}"
     name: "{{ item.name }}"
