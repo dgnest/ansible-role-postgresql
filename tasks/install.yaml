@@ -42,7 +42,7 @@
   become: true
   apt:
     name: "{{item}}"
-    state: latest
+    state: present
   with_items:
     - python-psycopg2
   tags:
