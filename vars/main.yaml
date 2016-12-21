@@ -1,3 +1,7 @@
 ---
 
 # vars file for postgresql
+
+_postgresql_dependences:
+  - acl
+  - python-psycopg2
