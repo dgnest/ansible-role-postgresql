@@ -1,5 +1,6 @@
 ---
 
+- include: dependences.yaml
 - include: install.yaml
 - include: extensions.yaml
 - include: configure.yaml
