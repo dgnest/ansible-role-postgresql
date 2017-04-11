@@ -7,3 +7,5 @@
     name: "{{ item.name }}"
     port: "{{ item.port }}"
   with_items:  "{{ postgresql_databases | default({}) }}"
+  when:
+    - postgresql_databases is defined
