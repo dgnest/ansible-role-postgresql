@@ -1,11 +1,13 @@
 ---
 
-- name: Install PostgreSQL
+- name: Install Dependences PostgreSQL
   become: true
   package:
     name: "{{item}}"
     state: present
   with_items: "{{ _postgresql_dependences | default([]) }}"
+  when:
+    - _postgresql_dependences is defined
   tags:
     - postgresql
     - db
