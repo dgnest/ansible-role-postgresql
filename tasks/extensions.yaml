@@ -5,10 +5,12 @@
 # ---------------------------------
 
 - name: Install development headers
-  when: postgresql_dev_headers == True
+  when:
+    - postgresql_dev_headers == True
   become: true
-  apt:
+  package:
     name: libpq-dev
+    state: present
   tags:
     - postgresql
     - db
@@ -37,8 +39,9 @@
 - name: Add postgis extensions
   when: postgresql_postgis
   become: true
-  apt:
+  package:
     name: "{{item}}"
+    state: present
   with_items:
     - "postgresql-{{postgresql_version}}-postgis-{{postgresql_postgis_version}}"
     - libgeos-c1
