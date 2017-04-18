@@ -23,6 +23,8 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items: "{{ postgresql_conf_templates | default({}) }}"
+  when:
+    - postgresql_conf_templates is defined
   notify: restart postgresql
   tags:
     - postgresql
@@ -45,6 +47,8 @@
   template:
     src: pg_ident.conf.j2
     dest: "{{postgresql_ident_file}}"
+  when:
+    - postgresql_ident_file is defined
   notify: restart postgresql
   tags:
     - postgresql
