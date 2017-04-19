@@ -10,5 +10,5 @@ _postgresql_dependences:
   - software-properties-common
 
 _postgresql_dependences_postgis:
-  - "postgresql-{{postgresql_version}}-postgis-{{postgresql_postgis_version}}"
   - libgeos-c1
+  - postgis
