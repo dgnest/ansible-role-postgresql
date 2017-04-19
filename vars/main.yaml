@@ -11,7 +11,4 @@ _postgresql_dependences:
 
 _postgresql_dependences_postgis:
   - "postgresql-{{postgresql_version}}-postgis-{{postgresql_postgis_version}}"
-  - binutils
-  - libproj-dev
-  - gdal-bin
   - libgeos-c1
