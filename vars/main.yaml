@@ -8,3 +8,7 @@ _postgresql_dependences:
   - python-psycopg2
   - python-software-properties
   - software-properties-common
+
+_postgresql_dependences_postgis:
+  - libgeos-c1
+  - postgis
