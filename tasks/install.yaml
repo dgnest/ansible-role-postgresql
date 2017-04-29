@@ -34,6 +34,7 @@
     state: present
     update_cache: true
     cache_valid_time: 3600
+  notify: restart postgresql
   tags:
     - postgresql
     - db
